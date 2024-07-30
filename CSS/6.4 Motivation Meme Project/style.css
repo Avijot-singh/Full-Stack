@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    margin-left: 50px;
+}
+
+img {
+    width: 100%;
+    border: 5px solid white;
+}
+
+div {
+    margin-left: 25%;
+    width: 50%;
+}
+
+#div {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#p {
+    font-size: 10rem;
+}
