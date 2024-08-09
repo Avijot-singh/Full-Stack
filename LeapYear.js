@@ -8,5 +8,25 @@ except every year that is evenly divisible by 100
 unless the year is also evenly divisible by 400  */
 
 function isLeap(year) {
+    if (year % 4 === 0) { // The year % 4 checks if 4 the year is divisible by 4 with no remainder
+        if (year % 100 === 0) {
+            if (year % 400 === 0) {
+                return "Leap Year"
+            }
+            else {
+                return "not as leap year"
+            }
+        }
+        else {
+            return "leap year"
+        }
+
+    }
+    else {
+        return "it is not a leap year"
+    }
 
 }
+
+let years = isLeap(1989);
+console.log(years)
