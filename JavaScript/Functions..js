@@ -55,3 +55,17 @@ function getMilk(money) {
 
 }
 getMilk(20)
+
+
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+}
+
+// Functions Calling Other Functions
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+    const juice = `juice with ${applePieces} apples and ${orangePieces} oranges.`;
+    return juice;
+}
+console.log(fruitProcessor(2, 3));
