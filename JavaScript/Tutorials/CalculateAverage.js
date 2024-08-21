@@ -19,3 +19,4 @@ function checker(koa,dol){
 }
 
 checker(KoalasAvg,DolphinsAvg);
+

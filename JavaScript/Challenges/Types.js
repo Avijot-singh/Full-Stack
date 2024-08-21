@@ -33,3 +33,22 @@ const yyearsUntilRetirements = function (birtYear, firstName) {
 }
 
 console.log(yyearsUntilRetirements(2002, 'Avi'));
+
+// Functions Review: 3 Different FUnction Types 
+// Doesnt matter what function we use we can achieve the same output
+
+// Function declaration
+function calcAgee(birthYear) { // Function that can be used before it's declared
+    return 2037 - birthYear
+}
+// Function expression
+const calcAgeee = function (birthYear){ // Essentially a function value stored in a variable
+    return 2037 - birthYear;
+};
+
+// Arrow function
+const calcAgeeee = birthYear => 2037 - birthYear; // Great for a quick one-line function, has no :this: keyword
+
+function calage(birthYear, firstName){
+    const age = 2037
+}
