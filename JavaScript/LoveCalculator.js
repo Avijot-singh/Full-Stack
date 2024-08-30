@@ -22,7 +22,7 @@ function love_calculator1(first_name, second_name) {
         console.log("Not made for each other: " + loveScore + " percent");
     }
     else {
-        console.log("your love is " + loveScore + " percent. 1");
+        console.log("your love is " + loveScore + " percent.");
     }
 }
-love_calculator1("Avi", "Manu")
+love_calculator1("Avi", "afi")
