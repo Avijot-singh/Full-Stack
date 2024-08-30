@@ -1,0 +1,11 @@
+Console.log() -> Print 
+console.dir() -> Print object
+
+window -> Document, which is a model it is a representation of our html code
+
+ALl the objects in the tree DOM are called nodes
+nodes are objects
+Child nodes are objects within nodes
+- DOM is useful when we want changes in our HTML, good example of this is Light and Dark mode on websites
+- Once the code is pushed on website HTML and CSS can't be modified on the run time, JavaScript can 
+- We do Dynamic changes on JavaScript

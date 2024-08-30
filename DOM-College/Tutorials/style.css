@@ -1,0 +1,15 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    background-color: bluevioet;
+    border: 2px solid black;
+    width: 20rem;
+}
+
+button {
+    margin: 10px;
+    width: 50pt;
+    background-color: aqua;
+}
