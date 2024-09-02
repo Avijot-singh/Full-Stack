@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light and dark mode</title>
+    <style>
+        .dark{
+            background-color: black;
+            color: white;
+        }
+        .light{
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 >Light & Dark Mode</h1>
+    <p >Hey i am learning javascript in a good manner the dot points bellow aim to show you how i will be learning</p>
+
+    <ul > Dot points on my goals
+        <li>javascript</li>
+        <li>Node.js</li>
+        <li>Express.js</li>
+        <li>React</li>
+        <li>Next.js</li>
+    </ul>
+    <h3>Lets see how i go</h3>
+
+    <button id="move">Click me to change</button>
+
+    
+    
+    <script>
+        let body = document.querySelector('body');
+        let currentMode = 'light';
+        let button = document.querySelector('#move');
+            button.addEventListener ("click", () =>{
+                if(currentMode === "light"){
+                    currentMode = "dark";
+                     body.classList.add('dark');
+                     body.classList.remove('light');
+                }
+                else{
+                    currentMode = "light";
+                    body.classList.add('light');
+                    body.classList.remove('dark');
+                }
+
+                console.log(currentMode);
+            });
+
+        
+
+    </script>
+</body>
+</html>
