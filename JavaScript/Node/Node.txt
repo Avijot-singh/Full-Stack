@@ -24,3 +24,6 @@
 - So we can connect Server with Client 
 - Node can make API for web, Androif and IOS etc.
 - Make can also make Website
+
+// CORE MODULES IN NODE JS
+- Some pre defined features such as maybe to call api, connect to database or print something. Example console.log, fs, Buffer, HTTP 
