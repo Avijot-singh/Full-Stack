@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <p>Hey I am a paragraph</p>
+
+    <div>New Div</div>
+
+    <button class="highlight">click me!</button>
+
+    <script>
+        let para = document.querySelector('p');
+        para.innerText = "Hello World";
+
+        let div = document.querySelector('div');
+       // div.append(body);
+
+        
+        let button = document.querySelector(".highlight");
+
+        button.addEventListener('click', function(){
+            para.classList.toggle("switch");
+        });
+
+        
+        
+    </script>
+</body>
+</html>
