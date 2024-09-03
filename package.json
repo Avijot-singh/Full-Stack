@@ -1,0 +1,26 @@
+{
+  "name": "full-stack",
+  "version": "1.0.0",
+  "description": "Node js package manager",
+  "main": "index.js",
+  "dependencies": {
+    "ansi-regex": "^4.1.1",
+    "chalk": "^5.3.0",
+    "colors": "^1.4.0",
+    "prompt-sync": "^4.2.0",
+    "strip-ansi": "^5.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avijot-singh/Full-Stack.git"
+  },
+  "author": "avijot singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avijot-singh/Full-Stack/issues"
+  },
+  "homepage": "https://github.com/Avijot-singh/Full-Stack#readme"
+}

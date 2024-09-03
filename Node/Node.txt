@@ -1,3 +1,7 @@
+// INTERVIEW QUESTIONS 
+1. Is NodeJs single or multi threaded. Ans -  It is single threaded meaning it runs the command 1 at a time
+
+
 - Node is not a Language, it uses Javascript 
 - This is a Server Environment, it is advanced than Javascript
 - Node js can connect with database
@@ -27,3 +31,11 @@
 
 // CORE MODULES IN NODE JS
 - Some pre defined features such as maybe to call api, connect to database or print something. Example console.log, fs, Buffer, HTTP 
+
+// PACAGE.JSON
+- Keeps details, information about your project, such as what version is your project on, whats the name of it, github repository
+- Packages inside your projects are managed by package.json 
+- NPM -> Node Package Manager, it manages all the node packages 
+- To initalzie NPM you write npm init
+- If Node_modules folder is deleted accdentally, Go to teminal and simply type npm install
+- Node MODULES folder should not be pushed to github as it can be a heavyload
