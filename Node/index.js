@@ -62,6 +62,7 @@ console.log(chalk.blue('Hello world!'));
 */
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
 // SIMPLE API
 const http = require('http');
 const data = require('./data'); // Import data from the data module
@@ -70,6 +71,25 @@ http.createServer((req, resp) => {
     resp.writeHead(200, {'Content-Type': 'application/json'}); // Set headers for JSON response
     resp.write(JSON.stringify(data)); // Write the JSON data to the response
     resp.end(); // End the response
-}).listen(5000, () => {
-    console.log('Server is listening on port 5000');
-});
+    }).listen(5000, () => {
+        console.log('Server is listening on port 5000');
+        });
+        */
+       
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// COMMAND LINE INPUT
+//console.log(process.argv) // Process is object which consists alot of things about node.js
+const fs = require('fs');
+const input = process.argv;
+if(input[2]=='add'){
+    fs.writeFileSync(input[3],input[4]) // First input is name of the file, 2nd input is the content we want inside it 
+} 
+else if(input[2] == 'remove'){
+    fs.unlinkSync(input[3])
+}
+else{
+    console.log("invalid output");
+}
+// To Add -> In terminal C:\Users\avijot\Saved Games\Full-Stack> node .\node\index.js add orange.txt 'this is color and fruit'
+// To Remove -> C:\Users\avijot\Saved Games\Full-Stack> node .\node\index.js remove orange.txt 

@@ -58,3 +58,6 @@ run it.
 - Response -> Send | Request -> Recieve
 - Codes | 200 for sending data | 201 for creating | 404 for not found | 500 for internal server error 
 
+// INPUT FROM COMMAND LINE
+- console.log(process.argv) | when run you can enter input 
+- To fetch the input | console.log(process.argv[0]) it will give you the first input
