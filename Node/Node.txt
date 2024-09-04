@@ -3,6 +3,7 @@
 2. Is nodeJs Sync or Async language. Ans - It is a async language, let's say we 3 to 4 functions in our file, when we run, it will run the first funtion as it is
 and then maybe 2nd function as complex data, so node js wont wait for it to complete rather will run it and run other 3 and 4 functions and once 2nd is ready it will 
 run it.
+3. What is buffer. Ans - Tempory storage, node needs a little memory to run program
 
 
 - Node is not a Language, it uses Javascript 
@@ -61,3 +62,7 @@ run it.
 // INPUT FROM COMMAND LINE
 - console.log(process.argv) | when run you can enter input 
 - To fetch the input | console.log(process.argv[0]) it will give you the first input
+
+// ASYNCHRONOUS AND SYNCHRONOUS
+- In Synchronous operations tasks are perfroed one at a time
+- In Asynchronous, Second Task do not wait to finish the First Task
