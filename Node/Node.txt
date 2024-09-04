@@ -66,3 +66,5 @@ run it.
 // ASYNCHRONOUS AND SYNCHRONOUS
 - In Synchronous operations tasks are perfroed one at a time
 - In Asynchronous, Second Task do not wait to finish the First Task
+
+// HOW NODE JS WORKS    
