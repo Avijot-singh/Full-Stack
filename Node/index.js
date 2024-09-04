@@ -77,19 +77,33 @@ http.createServer((req, resp) => {
         */
        
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+/*
 // COMMAND LINE INPUT
 //console.log(process.argv) // Process is object which consists alot of things about node.js
 const fs = require('fs');
 const input = process.argv;
 if(input[2]=='add'){
     fs.writeFileSync(input[3],input[4]) // First input is name of the file, 2nd input is the content we want inside it 
-} 
-else if(input[2] == 'remove'){
-    fs.unlinkSync(input[3])
+    } 
+    else if(input[2] == 'remove'){
+        fs.unlinkSync(input[3])
+        }
+        else{
+            console.log("invalid output");
+    }
+    // To Add -> In terminal C:\Users\avijot\Saved Games\Full-Stack> node .\node\index.js add orange.txt 'this is color and fruit'
+    // To Remove -> C:\Users\avijot\Saved Games\Full-Stack> node .\node\index.js remove orange.txt 
+    */
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const fs = require('fs');
+const path = require('path');
+const dirPath = path.join(__dirname, 'files'); // This will give us the path of the files folder
+for(i = 0;i<5;i++){
+    fs.writeFileSync(dirPath+"/apple"+i+".txt", 'this is a apple file');
 }
-else{
-    console.log("invalid output");
-}
-// To Add -> In terminal C:\Users\avijot\Saved Games\Full-Stack> node .\node\index.js add orange.txt 'this is color and fruit'
-// To Remove -> C:\Users\avijot\Saved Games\Full-Stack> node .\node\index.js remove orange.txt 
+fs.readdir(dirPath,(err,files)=>{
+    files.forEach((item) =>{
+        console.log("file name is ", item);
+    })
+    
+}); // This will list out all the files listed in the path
