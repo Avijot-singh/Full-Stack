@@ -51,7 +51,7 @@ function DataCenter(req, resp) {
         const test1 = (a) => a + 100;
         */
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+/*
 // PACKAGE
 const colors = require('colors');
 console.log("package".bgBlue);
@@ -59,3 +59,17 @@ console.log("package".bgBlue);
 import chalk from 'chalk';
 
 console.log(chalk.blue('Hello world!'));
+*/
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SIMPLE API
+const http = require('http');
+const data = require('./data'); // Import data from the data module
+
+http.createServer((req, resp) => {
+    resp.writeHead(200, {'Content-Type': 'application/json'}); // Set headers for JSON response
+    resp.write(JSON.stringify(data)); // Write the JSON data to the response
+    resp.end(); // End the response
+}).listen(5000, () => {
+    console.log('Server is listening on port 5000');
+});
