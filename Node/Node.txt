@@ -1,5 +1,9 @@
 // INTERVIEW QUESTIONS 
 1. Is NodeJs single or multi threaded. Ans -  It is single threaded meaning it runs the command 1 at a time
+2. Is nodeJs Sync or Async language. Ans - It is a async language, let's say we 3 to 4 functions in our file, when we run, it will run the first funtion as it is
+and then maybe 2nd function as complex data, so node js wont wait for it to complete rather will run it and run other 3 and 4 functions and once 2nd is ready it will 
+run it.
+3. What is buffer. Ans - Tempory storage, node needs a little memory to run program
 
 
 - Node is not a Language, it uses Javascript 
@@ -39,4 +43,28 @@
 - To initalzie NPM you write npm init
 - If Node_modules folder is deleted accdentally, Go to teminal and simply type npm install
 - Node MODULES folder should not be pushed to github as it can be a heavyload
-- For the other developer to use your packages they simply have to type npm install 
+
+// Nodemon 
+- Package and Module is the same thing 
+- Nodemon continusely runs on your project, o bascially it keeps running the files
+- https://www.npmjs.com/package/nodemon
+- npm i nodemon
+- To use it after installaton, go to the desired file open terminal and write nodemon .\index.js
+
+// MAKE A SIMPLE API
+- We start by making a server
+- Create header and API body.
+- Create an API with static data
+- Put data in another file.
+- Response -> Send | Request -> Recieve
+- Codes | 200 for sending data | 201 for creating | 404 for not found | 500 for internal server error 
+
+// INPUT FROM COMMAND LINE
+- console.log(process.argv) | when run you can enter input 
+- To fetch the input | console.log(process.argv[0]) it will give you the first input
+
+// ASYNCHRONOUS AND SYNCHRONOUS
+- In Synchronous operations tasks are perfroed one at a time
+- In Asynchronous, Second Task do not wait to finish the First Task
+
+// HOW NODE JS WORKS    
