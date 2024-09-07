@@ -39,3 +39,4 @@
 - To initalzie NPM you write npm init
 - If Node_modules folder is deleted accdentally, Go to teminal and simply type npm install
 - Node MODULES folder should not be pushed to github as it can be a heavyload
+- For the other developer to use your packages they simply have to type npm install 
