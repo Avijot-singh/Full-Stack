@@ -75,3 +75,9 @@ run it.
 // EXPRESS JS
 - Express js is a framework inside Node js
 - Assists Node
+- Static pages are those that are made by developers and will only change and work on the basis of code written 
+- Dynamic pages are that are not only coded but also rely on the database statistics and all
+
+// EJS TEMPLATE engine
+-  npm install ejs
+- We need to use views folder by default

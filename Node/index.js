@@ -236,7 +236,7 @@ app.use(express.static(publicPath)); // This will load the statcic content we ca
 app.listen(5000);
 */
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+/*
 // REMOVE EXTENSION IN URL & 404 PAGE
 const express = require('express');
 const path = require('path');
@@ -261,6 +261,34 @@ app.get('/help', (_, resp) => {
 app.get('*', (_, resp) => { // Using the star allows us to say if user enters any other route except the ones listed it will show this by default
     resp.sendFile(`${publicPath}/nopage.html`);
 });
+app.listen(5000, () => {
+    console.log('Server is running on port 5000');
+});
+*/
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// DYNAMIC ROUTING
+const express = require('express');
+const path = require('path');
+
+const app = express();
+
+// Explicitly set the views directory path
+app.set('views', path.join(__dirname, 'views'));
+
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+
+app.get('/profile', (_, resp) => {
+    const user = {
+        name: "Avi Singh",
+        city: "Melbourne",
+        skill: "Node.js"
+    };
+    
+    // Render the profile.ejs view with user data
+    resp.render('profile', { user });
+});
+
 app.listen(5000, () => {
     console.log('Server is running on port 5000');
 });
