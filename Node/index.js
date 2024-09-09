@@ -167,6 +167,128 @@ waitingData.then((data)=>{ // using then to get the data in waiting Data
 })
 console.log(c+d); // Ans will be 10 */
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+// EXPRESS
 const express = require('express');
 const app = express();
-app.get(''()) // Provides routes, keeping empty mans its a homepage
+app.get('',(req,resp)=>{ // Root page
+    resp.send("hello, this is Home Page");
+});
+app.get('/about',(req,resp)=>{
+    resp.send("hello, this is About Page");
+});
+
+app.listen(5000);*/ // After making web page we need to host it;
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+// Routing 
+const express = require('express');
+const app = express();
+app.get('',(req,resp)=>{ // Root page
+    console.log("Data sent by browser =>>>", req.query.name) // http://localhost:5000/?name=Avi
+    resp.send("Welcome " + req.query.name);
+});
+app.get('/about',(req,resp)=>{
+    resp.send("hello, this is About Page");
+});
+
+app.listen(5000); */
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+// Render HTML and Json
+
+const express = require('express');
+const app = express();
+app.get('',(req,resp)=>{ // Root page
+    resp.send(`
+        <h1>Welcome to Home Page</h1><a href="/about"> Go to about page</a>
+        `); // Home page will have an h1 tag
+});
+app.get('/about',(req,resp)=>{
+    resp.send(`
+        <input type="text" placeholder="User name" value=${req.query.name}/> 
+        <button>Click Me!</button>
+        <a href="/home"> Go to about page</a>
+        `) // To get data from query data
+});
+
+app.get('/help', (req,resp)=>{
+    resp.send({
+        name: "Avijot Singh",
+        email: "singhavijot2002@gmail.com"
+    })
+})
+
+app.listen(5000); 
+*/
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+// HOW TO CALL HTML PAGE
+
+const express = require('express');
+const path = require('path');
+const app = express();
+const publicPath = path.join(__dirname,'public');
+console.log(publicPath) // __dirname gives you the root folder which will be node
+
+app.use(express.static(publicPath)); // This will load the statcic content we call the html pages static content
+
+app.listen(5000);
+*/
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+// REMOVE EXTENSION IN URL & 404 PAGE
+const express = require('express');
+const path = require('path');
+
+const app = express();
+const publicPath = path.join(__dirname, 'public');
+
+// Serve the index.html on the root path
+app.get('/', (_, resp) => {
+    resp.sendFile(`${publicPath}/index.html`);
+});
+
+// Serve home.html on /home path
+app.get('/home', (_, resp) => {
+    resp.sendFile(`${publicPath}/home.html`);
+});
+
+// Serve help.html on /help path
+app.get('/help', (_, resp) => {
+    resp.sendFile(`${publicPath}/help.html`);
+});
+app.get('*', (_, resp) => { // Using the star allows us to say if user enters any other route except the ones listed it will show this by default
+    resp.sendFile(`${publicPath}/nopage.html`);
+});
+app.listen(5000, () => {
+    console.log('Server is running on port 5000');
+});
+*/
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// DYNAMIC ROUTING
+const express = require('express');
+const path = require('path');
+
+const app = express();
+
+// Explicitly set the views directory path
+app.set('views', path.join(__dirname, 'views'));
+
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+
+app.get('/profile', (_, resp) => {
+    const user = {
+        name: "Avi Singh",
+        city: "Melbourne",
+        skill: "Node.js"
+    };
+
+    // Render the profile.ejs view with user data
+    resp.render('profile', { user });
+});
+
+app.listen(5000, () => {
+    console.log('Server is running on port 5000');
+});
