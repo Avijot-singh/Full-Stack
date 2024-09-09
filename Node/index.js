@@ -222,7 +222,9 @@ app.get('/help', (req,resp)=>{
 app.listen(5000); 
 */
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
 // HOW TO CALL HTML PAGE
+
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -232,3 +234,33 @@ console.log(publicPath) // __dirname gives you the root folder which will be nod
 app.use(express.static(publicPath)); // This will load the statcic content we call the html pages static content
 
 app.listen(5000);
+*/
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// REMOVE EXTENSION IN URL & 404 PAGE
+const express = require('express');
+const path = require('path');
+
+const app = express();
+const publicPath = path.join(__dirname, 'public');
+
+// Serve the index.html on the root path
+app.get('/', (_, resp) => {
+    resp.sendFile(`${publicPath}/index.html`);
+});
+
+// Serve home.html on /home path
+app.get('/home', (_, resp) => {
+    resp.sendFile(`${publicPath}/home.html`);
+});
+
+// Serve help.html on /help path
+app.get('/help', (_, resp) => {
+    resp.sendFile(`${publicPath}/help.html`);
+});
+app.get('*', (_, resp) => { // Using the star allows us to say if user enters any other route except the ones listed it will show this by default
+    resp.sendFile(`${publicPath}/nopage.html`);
+});
+app.listen(5000, () => {
+    console.log('Server is running on port 5000');
+});
