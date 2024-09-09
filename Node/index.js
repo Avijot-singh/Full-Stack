@@ -259,7 +259,7 @@ app.get('/help', (_, resp) => {
     resp.sendFile(`${publicPath}/help.html`);
 });
 app.get('*', (_, resp) => { // Using the star allows us to say if user enters any other route except the ones listed it will show this by default
-    resp.sendFile(`${publicPath}/nopage.html`);
+    resp.sendFile(`${publicPath}/nopage.html`); // resp.sendFile() is used to send a static file (like an HTML file, image, or PDF) directly to the user without any dynamic data being injected.
 });
 app.listen(5000, () => {
     console.log('Server is running on port 5000');
@@ -282,12 +282,16 @@ app.get('/profile', (_, resp) => {
     const user = {
         name: "Avi Singh",
         city: "Melbourne",
-        skill: "Node.js"
+        skills: ['php', 'js', 'javaScript','node','react']
     };
 
     // Render the profile.ejs view with user data
     resp.render('profile', { user });
 });
+
+app.get('/login', (_, resp)=> {
+    resp.render('login'); // is used to render views/templates (like .ejs files) in Express.
+})
 
 app.listen(5000, () => {
     console.log('Server is running on port 5000');
