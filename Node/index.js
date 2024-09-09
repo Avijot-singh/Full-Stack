@@ -266,6 +266,7 @@ app.listen(5000, () => {
 });
 */
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
 // DYNAMIC ROUTING
 const express = require('express');
 const path = require('path');
@@ -295,4 +296,31 @@ app.get('/login', (_, resp)=> {
 
 app.listen(5000, () => {
     console.log('Server is running on port 5000');
+});*/
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const express = require('express');
+const app = express();
+
+const reqFilter = (req, resp, next) => {
+    if (!req.query.age) { // User needs to provide age http://localhost:5000/?age=10 otherwise it will ask
+        
+        resp.send("Please provide age: ");
+    }
+    else if (req.query.age < 18) {
+        resp.send("You cannot enter");
+    }
+    else {
+       next();  
+    }
+
+} // Filtering the request
+
+app.use(reqFilter)
+app.get('/', (req, resp) => {
+    resp.send("Welcome to the homepage");
 });
+
+app.get('/users',(req, resp)=> {
+    resp.send("Welcome to the users page");
+})
+app.listen(5000);

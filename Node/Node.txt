@@ -81,3 +81,19 @@ run it.
 // EJS TEMPLATE engine
 -  npm install ejs
 - We need to use views folder by default
+
+// MIDDLEWARES in Node.js
+ What are Middlewares?
+ - Middlewares are functions that have access to the request (req), response (res), and next objects in an application’s request-response cycle.
+ - They are primarily used in routing, but can also be applied globally across all routes or selectively to specific routes.
+ - The "next" function is a reference to the next middleware function in the stack. It allows passing control from one middleware to the next, until the final middleware sends a response.
+
+ Why use Middlewares? - They allow us to perform tasks like modifying the request or response objects, adding authentication checks, logging, error handling, and more.
+ - Middleware functions can be used to pre-process requests before sending a response or handing over control to the next middleware or route handler.
+
+ Types of Middlewares:
+ 1. **Application-Level Middleware:** Used on the app instance and executed for every incoming request or a specific route.
+ 2. **Router-Level Middleware:** Applied to a specific router object instead of the app instance.
+ 3. **Error-Handling Middleware:** Used to handle errors. These have four arguments (err, req, res, next).
+ 4. **Built-In Middleware:** Such as `express.json()` and `express.static()` in Express.js, provided to handle common tasks like parsing request bodies or serving static files.
+ 5. **Third-Party Middleware:** Middleware installed via npm, like `morgan` for logging or `helmet` for securing HTTP headers.
