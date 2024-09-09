@@ -75,7 +75,7 @@ http.createServer((req, resp) => {
         console.log('Server is listening on port 5000');
         });
         */
-       
+
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
 // COMMAND LINE INPUT
@@ -83,8 +83,8 @@ http.createServer((req, resp) => {
 const fs = require('fs');
 const input = process.argv;
 if(input[2]=='add'){
-    fs.writeFileSync(input[3],input[4]) // First input is name of the file, 2nd input is the content we want inside it 
-    } 
+    fs.writeFileSync(input[3],input[4]) // First input is name of the file, 2nd input is the content we want inside it
+    }
     else if(input[2] == 'remove'){
         fs.unlinkSync(input[3])
         }
@@ -92,7 +92,7 @@ if(input[2]=='add'){
             console.log("invalid output");
     }
     // To Add -> In terminal C:\Users\avijot\Saved Games\Full-Stack> node .\node\index.js add orange.txt 'this is color and fruit'
-    // To Remove -> C:\Users\avijot\Saved Games\Full-Stack> node .\node\index.js remove orange.txt 
+    // To Remove -> C:\Users\avijot\Saved Games\Full-Stack> node .\node\index.js remove orange.txt
     */
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
@@ -106,7 +106,7 @@ for(i = 0;i<5;i++){
         files.forEach((item) =>{
             console.log("file name is ", item);
             })
-            
+
             }); // This will list out all the files listed in the path
             */
 
@@ -130,13 +130,13 @@ fs.rename(filePath, `${dirPath}/fruit.txt`, (err)=>{
     */
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*
-// ASYNC AND SYNC   
+// ASYNC AND SYNC
 
 console.log("Start exe..."); // This will run first
 
 setTimeout(()=>{
     console.log("logic exe..."); // This will run third
-    
+
 }),2000
 
 console.log("Complete exe..."); // This will run secod
@@ -150,7 +150,7 @@ setTimeout(() =>{
 },2000)
 
 console.log(a+b); // Ans will be 10
-// To fix the Drawback | If logic is taking time, we use promises 
+// To fix the Drawback | If logic is taking time, we use promises
 let c = 10;
 let d = 0;
 
@@ -167,3 +167,6 @@ waitingData.then((data)=>{ // using then to get the data in waiting Data
 })
 console.log(c+d); // Ans will be 10 */
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const express = require('express');
+const app = express();
+app.get(''()) // Provides routes, keeping empty mans its a homepage
