@@ -4,7 +4,7 @@
 and then maybe 2nd function as complex data, so node js wont wait for it to complete rather will run it and run other 3 and 4 functions and once 2nd is ready it will 
 run it.
 3. What is buffer. Ans - Tempory storage, node needs a little memory to run program
-
+4. How is require('path') helpful: The path module helps you handle file paths easily and correctly across different operating systems.
 
 - Node is not a Language, it uses Javascript 
 - This is a Server Environment, it is advanced than Javascript
@@ -68,3 +68,10 @@ run it.
 - In Asynchronous, Second Task do not wait to finish the First Task
 
 // HOW NODE JS WORKS    
+- Startup: When a Node.js application starts, it initializes the event loop, which is the core of Node.js's non-blocking, asynchronous architecture.
+- Node APIS Node.js provides built-in APIs (e.g., fs, http, crypto) for performing I/O operations, networking, and more. These are often implemented in C++ or C for performance.
+- Garabage Collection : Memory Management: Node.js uses V8's garbage collector to manage memory and clean up unused objects. This process occurs in the background and is managed by V8.
+
+// EXPRESS JS
+- Express js is a framework inside Node js
+- Assists Node
