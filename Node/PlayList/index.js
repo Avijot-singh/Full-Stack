@@ -298,6 +298,8 @@ app.listen(5000, () => {
     console.log('Server is running on port 5000');
 });*/
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+// FETCH DATA
 const express = require('express');
 const app = express();
 
@@ -324,3 +326,21 @@ app.get('/users',(req, resp)=> {
     resp.send("Welcome to the users page");
 })
 app.listen(5000);
+*/
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//CONNECT MONGODB
+
+const { MongoClient } = require('mongodb');
+const url = 'mongodb://localhost:27017';
+const client = new MongoClient(url); 
+
+async function getData() {
+    let result = await client.connect();
+    let db = result.db('e-comm');
+    let collection = db.collection('products');
+    let response = await collection.find({}).toArray();
+    console.log(response);
+}
+
+getData();
