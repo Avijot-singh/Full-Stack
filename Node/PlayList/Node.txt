@@ -97,3 +97,5 @@ run it.
  3. **Error-Handling Middleware:** Used to handle errors. These have four arguments (err, req, res, next).
  4. **Built-In Middleware:** Such as `express.json()` and `express.static()` in Express.js, provided to handle common tasks like parsing request bodies or serving static files.
  5. **Third-Party Middleware:** Middleware installed via npm, like `morgan` for logging or `helmet` for securing HTTP headers.
+
+ 
