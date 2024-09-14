@@ -70,6 +70,8 @@ const server = http.createServer((req, res) => {
 server.listen(5000);
 */
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+// HOW TO MAKE IT DYNAMIC WEBPAGES FROM SERVER SIDE
 // Import required modules
 const http = require("http");
 const fs = require("fs");
@@ -116,3 +118,54 @@ const server = http.createServer((req, res) => {
 server.listen(5000, () => {
   console.log("Server is listening on port 5000");
 });
+*/
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*
+// REQUEST DIFFERENT TYPES OF METHODS SUCH AS GET AND POST ALSO USE POSTMAN
+const http = require("http");
+const fs = require("fs");
+const path = require("path");
+
+// Build the absolute path to the data.json file
+const data_path = path.join(__dirname, "data.json");
+
+// Read and parse the data.json file
+const data = JSON.parse(fs.readFileSync(data_path, "utf-8"));
+
+// Extract the products array from the parsed data
+const products = data.products;
+
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+  // Log the request URL to the console for debugging
+  console.log(req.url, req.method); // req.method will give you the type of the url such as get '/product/1 GET'
+
+  // Check if the request URL starts with '/product'
+  if (req.url.startsWith("/product")) {
+    // Extract the product ID from the URL
+    // For example, if the URL is '/product/5', this will extract '5'
+    const id = req.url.split("/")[2];
+
+    // Find the product with the extracted ID in the products array
+    // Convert the ID to a number using +id
+    const prd = products.find((p) => p.id === +id);
+
+    // Log the found product to the console
+    console.log(prd);
+
+    // Send a response with the found product (optional)
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify(prd));
+  } else {
+    // Handle other routes (optional)
+    res.writeHead(404, "Not Found");
+    res.end("Page not found");
+  }
+});
+
+// Start the server on port 5000
+server.listen(5000, () => {
+  console.log("Server is listening on port 5000");
+});
+*/
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
