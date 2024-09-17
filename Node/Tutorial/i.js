@@ -13,15 +13,28 @@ const server = express();
 
 // MIDDLEWARE - When is request comes it goes to middleware and then further to server
 
-server.use((req, res, next) => { // We can also call this a logger/Middleware, this man it creates a log for all the requests sent to the server 
+server.use((req, res, next) => { // We can also call this a logger/Middleware, this man it creates a log for all the requests sent to the server | This is also an application Middleware
     console.log(req.method, req.ip, req.hostname)
     next();
 });
 
+const auth = ((req, res, next) => {
+    console.log();
+    if(req.query.password=='123'){   // Query is the value after url question mark | http://localhost:8000/?password=123 --> Authorized | http://localhost:8000 --> Unauthorized
+
+        next();
+    }else {
+        res.sendStatus(401); // 401 For not Authorized
+    }
+    
+});
+
+// server.use(auth); // This will use auth all around the application
+
 // In express it goes from top to bottom in sequence 
 
 // API - ENDPOINT - ROUTE
-server.get("/", (req, res) => {
+server.get("/",auth, (req, res) => { // placing the Auth in here will ensure that authentication is only needed when this root api is called
     res.json({ type: 'GET2' }); 
 });
 
