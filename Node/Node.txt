@@ -99,4 +99,12 @@ run it.
  4. **Built-In Middleware:** Such as `express.json()` and `express.static()` in Express.js, provided to handle common tasks like parsing request bodies or serving static files.
  5. **Third-Party Middleware:** Middleware installed via npm, like `morgan` for logging or `helmet` for securing HTTP headers.
 
- 
+ // Middleware vs Route Handlers:
+
+- server.use() is used to apply middleware to all routes or a specific path.
+- server.get() (or server.post(), etc.) is used to define route handlers for specific HTTP methods.
+
+Middleware Chain:
+
+Middleware functions are executed in the order they are defined.
+The next() function is used to pass control to the next middleware in the chain

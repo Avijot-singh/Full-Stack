@@ -13,14 +13,19 @@ const server = express();
 
 // MIDDLEWARE - When is request comes it goes to middleware and then further to server
 
+server.use(express.json()); // BodyParser so it understands body
+//server.use(express.urlencoded());
+
+server.use(express.static('public')); // Static hosting can direclty show you the files, by default it looks for convention files such as index.html
 server.use((req, res, next) => { // We can also call this a logger/Middleware, this man it creates a log for all the requests sent to the server | This is also an application Middleware
+    console.log(req.query);   
     console.log(req.method, req.ip, req.hostname)
     next();
 });
 
 const auth = ((req, res, next) => {
     console.log();
-    if(req.query.password=='123'){   // Query is the value after url question mark | http://localhost:8000/?password=123 --> Authorized | http://localhost:8000 --> Unauthorized
+    if(req.body.password=='123'){   // Query is the value after url question mark | http://localhost:8000/?password=123 --> Authorized | http://localhost:8000 --> Unauthorized req.body for postman 
 
         next();
     }else {
