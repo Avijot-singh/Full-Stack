@@ -87,6 +87,7 @@ run it.
  - Middlewares are functions that have access to the request (req), response (res), and next objects in an application’s request-response cycle.
  - They are primarily used in routing, but can also be applied globally across all routes or selectively to specific routes.
  - The "next" function is a reference to the next middleware function in the stack. It allows passing control from one middleware to the next, until the final middleware sends a response.
+ - 
 
  Why use Middlewares? - They allow us to perform tasks like modifying the request or response objects, adding authentication checks, logging, error handling, and more.
  - Middleware functions can be used to pre-process requests before sending a response or handing over control to the next middleware or route handler.
