@@ -82,6 +82,28 @@ run it.
 -  npm install ejs
 - We need to use views folder by default
 
+// CONVERSION
+In JavaScript,  can easily convert between strings and integers.
+
+let str = "123";
+let num = +str; // Converts "123" (string) to 123 (number)
+Other Methods for Conversion:
+
+parseInt(): This function extracts and converts a string into an integer. It’s useful when dealing with non-numeric characters in the string.
+
+let str = "123abc";
+let num = parseInt(str); // Results in 123
+Number(): Another option for converting strings to numbers. Unlike parseInt(), Number() will return NaN (Not-a-Number) if the string contains non-numeric characters.
+
+let str = "123";
+let num = Number(str); // Results in 123
+Converting Integer to String: You can convert an integer to a string using toString() or by concatenating it with an empty string ("").
+
+let num = 123;
+let str = num.toString(); // Results in "123"
+
+let str2 = num + ""; // Another way, also results in "123"
+
 // MIDDLEWARES in Node.js
  What are Middlewares?
  - Middlewares are functions that have access to the request (req), response (res), and next objects in an application’s request-response cycle.
@@ -111,3 +133,13 @@ The next() function is used to pass control to the next middleware in the chain
 
 next() after res.send():
 next() should not be called after res.send(). Once you send a response with res.send(), it’s the final step, so there's no need to call next() after that.
+
+// REST API
+
+
+CREATE | POST | Data in Request Body | /students
+READ | GET | Find Data in URL params | /students/:id
+READ | GET | NO Data | /students
+UPDATE | PUT | Find Data in URL params | /students:id
+UPDATE | PUT | Update Data in req body | 
+DELETE | DELETE | Find Data in URL params | /students:id

@@ -10,7 +10,7 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "mongodb": "^6.8.1",
-    "nodemon": "^3.1.4",
+    "nodemon": "^3.1.5",
     "prompt-sync": "^4.2.0",
     "strip-ansi": "^5.2.0"
   },
