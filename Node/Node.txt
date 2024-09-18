@@ -108,3 +108,6 @@ Middleware Chain:
 
 Middleware functions are executed in the order they are defined.
 The next() function is used to pass control to the next middleware in the chain
+
+next() after res.send():
+next() should not be called after res.send(). Once you send a response with res.send(), it’s the final step, so there's no need to call next() after that.
